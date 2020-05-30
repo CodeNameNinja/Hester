@@ -1,0 +1,72 @@
+<div class="container-fluid bgGradient">
+  <div class="grid">
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <img
+          src="../../assets/HomeAssets/homepage-brand-logo-image.png"
+          alt="Hero Image"
+          class="w-100"
+        />
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <mat-card>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-card class="text-center">
+                <div class="profileImage"></div>
+                <h3 class="mt-5">Hester Strumpfer</h3>
+                <div class="social-icons">
+                  <img
+                    src="../../assets/HomeAssets/awesome-facebook-square.svg"
+                    alt="facebook-square"
+                    class="p-2"
+                  />
+                  <img
+                    src="../../assets/HomeAssets/awesome-instagram.svg"
+                    alt="instragram-square"
+                    class="p-2"
+                  />
+                </div>
+              </mat-card>
+            </div>
+            <div class="col-md-6 p-5">
+              <h1 class = "title">About</h1>
+              <p class = "width">
+                Since my childhood days, I have had an immense passion for the
+                arts. I was always drawn to portraiture and did my first drawing
+                at age 14. In my mid-twenties, I endeavoured to take part in a
+                small solo, titled “Children of the World”, and drew children of
+                different ethnic groups in a variety of mediums.
+              </p>
+              <button
+              mat-raised-button
+              color="accent"
+              [routerLink] = "['/about']">More</button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <div class = "col-md-12">
+        <div class="row justify-content-center">
+          <h2 class = 'text-center subHeading mb-5'>Featured Art</h2>
+        </div>
+        <div class="row">
+          <div *ngFor = "let painting of paintings" class="col-md-4 d-flex justify-content-center mt-3 mb-3">
+            <app-art-item [painting] = 'painting' class = "width"></app-art-item>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 pb-5 justify-content-center">
+      <div class="row justify-content-center">
+        <h2 class = 'text-center subHeading mb-5'>Exhibitions</h2>
+      </div>
+        <app-exhibitions-carousel class="col-sm-12"></app-exhibitions-carousel>
+
+    </div>
+  </div>
+</div>

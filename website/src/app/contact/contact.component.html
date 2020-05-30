@@ -1,0 +1,71 @@
+<section>
+  <div class="container-fluid pt-5 pb-5">
+    <div class="grid">
+      <div class="row justify-content-center">
+        <div *ngIf = "painting"class="col text-center">
+          <img [src]="painting.imageUrls[0]" [alt]="painting.title" class = "w-50">
+          <h3>{{painting.title}}</h3>
+          <p>{{painting.detail}}</p>
+        </div>
+        <div class="col d-flex align-content-center justify-content-center">
+          <form class = "w-75" (submit) = "onSubmit(form)" #form = ngForm>
+              <mat-form-field appearance="outline" class = "w-50">
+                <mat-label>First Name</mat-label>
+                <input
+                matInput
+                type="text"
+                name ="firstName"
+                ngModel
+                required>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class = "pl-2 w-50">
+                <mat-label>Last Name</mat-label>
+                <input
+                matInput
+                type="text"
+                name = "lastName"
+                required
+                ngModel>
+              </mat-form-field>
+              <br>
+            <mat-form-field appearance="outline" class = "w-100">
+              <mat-label>Phone Number</mat-label>
+              <input
+              matInput
+              type="text"
+              name = "phoneNumber"
+              required
+              ngModel>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline" class = "w-100">
+              <mat-label>Email</mat-label>
+              <input
+              matInput
+              type="email"
+              name = "email"
+              required
+              ngModel>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline" class = "w-100">
+              <mat-label>Message</mat-label>
+              <textarea
+              matInput
+              type="text"
+              name ="message"
+              required
+              ngModel></textarea>
+            </mat-form-field>
+            <br>
+            <button class="btn btn-block"> Submit </button>
+            <div *ngIf = "EmailStatus"class="alert alert-success alert-dismissible fade show mt-5">
+              <strong>Success!</strong> Your message has been sent successfully.
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

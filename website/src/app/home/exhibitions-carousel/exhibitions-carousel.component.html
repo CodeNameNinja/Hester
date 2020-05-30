@@ -1,0 +1,19 @@
+
+ <ngx-glide
+  class="gallery"
+  [showArrows] = 'false'
+  >
+  <div class="gallery-cell" *ngFor = "let exhibition of exhibitions">
+    <div class="row">
+      <div class="col-sm-8 p-0 m-0 card__image">
+        <img [src]= exhibition.img class = "carousel-cell-image " [alt]="exhibition.title">
+      </div>
+      <div class="col-sm-4 p-4 m-0" style = "background-color: white !important;">
+        <h1 class = "exhibitionFont" style = "color: #E34735; font-size: 3rem; font-weight: bold">{{exhibition.title}}</h1>
+        <h3 class = "exhibitionFont" style = "color: rgb(211, 113, 102); ">{{exhibition.location}}</h3>
+        <h3 class = "exhibitionFont" style = "color: rgb(211, 113, 102);  text-align: right; font-weight: bold; font-size: 5rem">{{exhibition.date[0]}}</h3>
+        <h3 class = "exhibitionFont" style = "color: #E34735;  float: right;">{{exhibition.date[1]}}</h3>
+      </div>
+    </div>
+  </div>
+</ngx-glide>
